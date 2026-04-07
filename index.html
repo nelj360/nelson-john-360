@@ -112,6 +112,34 @@
   .footer-contact { display: inline-block; font-size: 12px; color: var(--text-muted); border: 1px solid var(--border); padding: 8px 20px; border-radius: 100px; text-decoration: none; transition: all 0.3s; margin-bottom: 20px; }
   .footer-contact:hover { border-color: var(--accent); color: var(--accent); }
 
+  /* --- Photo Carousel --- */
+  .carousel-wrapper {
+    overflow: hidden;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .carousel-track {
+    display: flex;
+    gap: 0;
+    animation: scroll-left 40s linear infinite;
+    width: max-content;
+  }
+  .carousel-track img {
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+  }
+  .carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+  }
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
   @media (max-width: 700px) {
     .hero { padding: 50px 20px 40px; }
     .listen-row { flex-direction: column; align-items: center; }
@@ -175,6 +203,41 @@
 
   <div class="divider"></div>
 
+  <!-- Photo Carousel -->
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <img src="photo1.jpg" alt="Photo 1">
+      <img src="photo2.jpg" alt="Photo 2">
+      <img src="photo3.jpg" alt="Photo 3">
+      <img src="photo4.jpg" alt="Photo 4">
+      <img src="photo5.jpg" alt="Photo 5">
+      <img src="photo6.jpg" alt="Photo 6">
+      <img src="photo7.jpg" alt="Photo 7">
+      <img src="photo8.jpg" alt="Photo 8">
+      <img src="photo9.jpg" alt="Photo 9">
+      <img src="photo10.jpg" alt="Photo 10">
+      <img src="photo11.jpg" alt="Photo 11">
+      <img src="photo12.jpg" alt="Photo 12">
+      <img src="photo13.jpg" alt="Photo 13">
+      <!-- Duplicate set for seamless loop -->
+      <img src="photo1.jpg" alt="Photo 1">
+      <img src="photo2.jpg" alt="Photo 2">
+      <img src="photo3.jpg" alt="Photo 3">
+      <img src="photo4.jpg" alt="Photo 4">
+      <img src="photo5.jpg" alt="Photo 5">
+      <img src="photo6.jpg" alt="Photo 6">
+      <img src="photo7.jpg" alt="Photo 7">
+      <img src="photo8.jpg" alt="Photo 8">
+      <img src="photo9.jpg" alt="Photo 9">
+      <img src="photo10.jpg" alt="Photo 10">
+      <img src="photo11.jpg" alt="Photo 11">
+      <img src="photo12.jpg" alt="Photo 12">
+      <img src="photo13.jpg" alt="Photo 13">
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
   <!-- YouTube Playlists side by side -->
   <p class="section-label">Watch</p>
   <div class="two-col">
@@ -211,11 +274,11 @@
 
   <!-- Footer -->
   <footer>
-    <a href="mailto:nelsonjohn.podcast@gmail.com" class="footer-contact">Get in touch</a>
+    <a href="/cdn-cgi/l/email-protection#2648434a5549484c494e48085649424547555266414b474f4a0845494b" class="footer-contact">Get in touch</a>
     <div class="socials">
       <a href="https://instagram.com/nelsonjohn360" target="_blank">Instagram</a>
       <a href="https://www.youtube.com/@nelsonjohn360" target="_blank">YouTube</a>
       <a href="https://open.spotify.com/show/16gWSQIaXRRPZkg34YI9Lk" target="_blank">Spotify</a>
       <a href="https://podcasts.apple.com/in/podcast/nelson-john-360/id1854354375" target="_blank">Apple Podcasts</a>
     </div>
-    <p>&copy; 2026 Nelson John 360 &middot; Made with ☕ in Bangalore
+    <p>&co
