@@ -118,11 +118,13 @@
     border-radius: var(--radius);
     border: 1px solid var(--border);
     background: var(--surface);
-    -webkit-overflow-scrolling: touch;
+    width: 100%;
   }
   .carousel-track {
     display: flex;
-    gap: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0px;
     animation: scroll-left 40s linear infinite;
     width: max-content;
     will-change: transform;
@@ -132,9 +134,10 @@
   .carousel-track img {
     height: 300px;
     width: auto;
+    max-width: none;
     object-fit: cover;
     flex-shrink: 0;
-    display: block;
+    display: inline-block;
   }
   .carousel-wrapper:hover .carousel-track {
     animation-play-state: paused;
