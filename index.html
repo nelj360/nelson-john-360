@@ -63,10 +63,12 @@
 
   /* --- Nav --- */
   nav {
-    padding: 32px 0;
+    padding: 32px 28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1;
   }
   .logo {
     font-family: 'JetBrains Mono', monospace;
@@ -92,10 +94,10 @@
     position: relative;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    margin: 0 -28px;
+    width: 100%;
   }
   .hero-bg {
     position: absolute;
@@ -203,6 +205,8 @@
   .listen-btn.apple:hover { background: rgba(168,85,247,0.15); border-color: #A855F7; }
   .listen-btn.spotify { background: rgba(30,215,96,0.08); border-color: rgba(30,215,96,0.15); }
   .listen-btn.spotify:hover { background: rgba(30,215,96,0.15); border-color: #1ED760; }
+  .listen-btn.ig { background: rgba(228,64,95,0.08); border-color: rgba(228,64,95,0.15); }
+  .listen-btn.ig:hover { background: rgba(228,64,95,0.15); border-color: #E4405F; }
 
   /* --- Divider --- */
   .divider {
@@ -390,18 +394,15 @@
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
 
-<div class="container">
-
-  <nav>
+<!-- HERO (full screen, outside container) -->
+<div class="hero-wrap">
+  <div class="hero-bg"></div>
+  <nav class="container">
     <div class="logo">NJ<span>360</span></div>
-    <a href="/cdn-cgi/l/email-protection#e688838a9589888c898e88d5d0d6a6818b878f8ac885898b" class="nav-pill">Get in touch</a>
+    <a href="mailto:nelsonjohn.podcast@gmail.com" class="nav-pill">Get in touch</a>
   </nav>
-
-  <!-- HERO -->
-  <div class="hero-wrap">
-    <div class="hero-bg"></div>
-    <section class="hero">
-      <div class="tag">Podcast · Deep Dives · Stories</div>
+  <section class="hero">
+    <div class="tag">Podcast · Deep Dives · Stories</div>
     <h1>Nelson John <em>360°</em></h1>
     <div class="subtitle">See the full picture</div>
     <p class="bio">
@@ -409,21 +410,27 @@
     </p>
 
     <div class="listen-row">
-      <a href="#" class="listen-btn yt" target="_blank">
+      <a href="https://www.youtube.com/@nelsonjohn360" class="listen-btn yt" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.12C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.386.52A2.994 2.994 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.994 2.994 0 0 0 2.112 2.12c1.881.52 9.386.52 9.386.52s7.505 0 9.386-.52a2.994 2.994 0 0 0 2.112-2.12C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/></svg>
         YouTube
       </a>
-      <a href="#" class="listen-btn apple" target="_blank">
+      <a href="https://podcasts.apple.com/in/podcast/nelson-john-360/id1854354375" class="listen-btn apple" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.87 19.66c-.58.84-1.2 1.67-2.14 1.69-.94.02-1.24-.56-2.31-.56s-1.4.54-2.29.58c-.92.04-1.62-.91-2.21-1.74-1.2-1.7-2.11-4.81-0.88-6.91.61-1.04 1.7-1.7 2.88-1.72.9-.02 1.76.61 2.31.61.55 0 1.59-.75 2.68-.64.46.02 1.74.18 2.56 1.39-.07.04-1.53.89-1.51 2.66.02 2.12 1.86 2.82 1.88 2.84-.02.05-.29 1.01-.97 1.8zM14.79 3.34c.49-.59 1.31-1.03 1.99-1.06.08.79-.23 1.57-.72 2.14-.48.57-1.28 1.02-2.05 0.96-.09-.76.27-1.55.78-2.04z"/></svg>
         Apple Podcasts
       </a>
-      <a href="#" class="listen-btn spotify" target="_blank">
+      <a href="https://open.spotify.com/show/16gWSQIaXRRPZkg34YI9Lk" class="listen-btn spotify" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.502 17.305c-.216.353-.677.465-1.028.249-2.818-1.722-6.365-2.111-10.542-1.157-.403.092-.806-.16-.898-.563-.092-.403.16-.806.563-.898 4.57-1.045 8.492-.595 11.656 1.34.352.216.465.677.249 1.029zm1.47-3.267c-.272.443-.851.583-1.294.311-3.225-1.982-8.142-2.557-11.958-1.399-.494.15-1.017-.13-1.167-.623-.149-.494.13-1.017.624-1.167 4.358-1.322 9.776-.682 13.484 1.584.443.272.583.851.311 1.294zm.126-3.403C15.226 8.093 8.85 7.88 5.157 9.003c-.593.18-1.22-.155-1.4-.748-.18-.593.155-1.22.748-1.4 4.239-1.29 11.285-1.04 15.738 1.62.548.318.735 1.017.417 1.56-.318.548-1.017.735-1.562.417z"/></svg>
         Spotify
       </a>
+      <a href="https://instagram.com/nelsonjohn360" class="listen-btn ig" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.988 4.088 4.088 0 0 1 .988 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.988 1.518 4.088 4.088 0 0 1-1.518.988c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.988 4.088 4.088 0 0 1-.988-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .988-1.518 4.088 4.088 0 0 1 1.518-.988c.46-.163 1.26-.349 2.43-.403C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a5.876 5.876 0 0 0-2.126 1.384A5.876 5.876 0 0 0 .63 4.14C.333 4.902.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.059 1.278.261 2.151.558 2.913a5.876 5.876 0 0 0 1.384 2.126A5.876 5.876 0 0 0 4.14 23.37c.762.297 1.635.499 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.059 2.151-.261 2.913-.558a5.876 5.876 0 0 0 2.126-1.384 5.876 5.876 0 0 0 1.384-2.126c.297-.762.499-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.059-1.278-.261-2.151-.558-2.913a5.876 5.876 0 0 0-1.384-2.126A5.876 5.876 0 0 0 19.86.63c-.762-.297-1.635-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        Instagram
+      </a>
     </div>
   </section>
-  </div>
+</div>
+
+<div class="container">
 
   <!-- Topics -->
   <div class="topics">
@@ -447,19 +454,15 @@
   <p class="section-label">Latest Episodes</p>
   <div class="videos">
     <div class="video-card">
-      <!-- Replace VIDEO_ID_1 with your actual YouTube video ID -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      <div class="video-info">
-        <p>Replace with your latest episode title</p>
-      </div>
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLeabQ2bzfMRZm1FOLehmQSMcCNPBqN1Tf" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
-    <div class="video-card">
-      <!-- Replace VIDEO_ID_2 with your actual YouTube video ID -->
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      <div class="video-info">
-        <p>Replace with your second episode title</p>
-      </div>
-    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="section-label">Listen on Spotify</p>
+  <div class="video-card" style="padding:0;overflow:hidden;">
+    <iframe style="border-radius:14px;width:100%;height:352px;border:none;" src="https://open.spotify.com/embed/show/16gWSQIaXRRPZkg34YI9Lk?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 
   <div class="divider"></div>
@@ -476,8 +479,9 @@
   <!-- Footer -->
   <footer>
     <div class="socials">
-      <a href="#">Instagram</a>
-      <a href="#">X / Twitter</a>
-      <a href="#">LinkedIn</a>
+      <a href="https://instagram.com/nelsonjohn360" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@nelsonjohn360" target="_blank">YouTube</a>
+      <a href="https://open.spotify.com/show/16gWSQIaXRRPZkg34YI9Lk" target="_blank">Spotify</a>
+      <a href="https://podcasts.apple.com/in/podcast/nelson-john-360/id1854354375" target="_blank">Apple Podcasts</a>
     </div>
-    <p>© 2026 Nelson John 360 · Made with ☕ in Banga
+    <p>© 
