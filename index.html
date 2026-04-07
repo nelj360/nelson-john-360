@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nelson John 360 — AI · Geopolitics · Science · Stories</title>
-<meta name="description" content="No jargon. No fluff. Just clarity. Award-winning journalist breaking down AI, geopolitics, science & the stories that matter.">
+<meta name="description" content="No jargon. No fluff. Just clarity. Award-winning journalist breaking down AI, geopolitics, science and the stories that matter.">
 <meta property="og:title" content="Nelson John 360">
-<meta property="og:description" content="No jargon. No fluff. Just clarity. Award-winning journalist breaking down AI, geopolitics, science & the stories that matter.">
+<meta property="og:description" content="No jargon. No fluff. Just clarity. Award-winning journalist breaking down AI, geopolitics, science and the stories that matter.">
 <meta property="og:image" content="https://nelsonjohn.in/og-image.jpg">
 <meta property="og:url" content="https://nelsonjohn.in">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nelson John 360">
-<meta name="twitter:description" content="No jargon. No fluff. Just clarity. Award-winning journalist breaking down AI, geopolitics, science & the stories that matter.">
+<meta name="twitter:description" content="No jargon. No fluff. Just clarity. Award-winning journalist breaking down AI, geopolitics, science and the stories that matter.">
 <meta name="twitter:image" content="https://nelsonjohn.in/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23E8C872'/%3E%3Ctext x='50' y='56' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-weight='700' font-size='38' fill='%230A0A0A'%3ENJ%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -27,93 +27,39 @@
     --border: rgba(255,255,255,0.08);
     --radius: 14px;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html, body {
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* --- Fixed background (behind everything with negative z-index) --- */
-  #bg-image {
-    position: fixed;
-    inset: 0;
-    background: url('portrait.jpg') center 10% / cover no-repeat;
-    z-index: -2;
-  }
-  #bg-overlay {
-    position: fixed;
-    inset: 0;
-    background: #0A0A0A;
-    opacity: 0;
-    z-index: -1;
-  }
-
+  html { overflow-x: hidden; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
   .container { max-width: 960px; margin: 0 auto; padding: 0 28px; }
 
-  /* --- Hero --- */
-  .hero-spacer {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px 28px 20px;
-    text-align: center;
-    position: relative;
-  }
-  .hero-spacer::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(10,10,10,0) 0%,
-      rgba(10,10,10,0.05) 30%,
-      rgba(10,10,10,0.35) 60%,
-      rgba(10,10,10,0.7) 85%,
-      rgba(10,10,10,0.85) 100%
-    );
-    pointer-events: none;
-  }
-  .hero-inner {
-    position: relative;
-    z-index: 1;
-    animation: fadeUp 1s ease both;
-  }
+  /* --- Hero with parallax bg --- */
+  .hero-section { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+  .hero-bg { position: absolute; inset: -20%; width: 140%; height: 140%; background: url('portrait.jpg') center 10% / cover no-repeat; will-change: transform; }
+  .hero-fade { position: absolute; inset: 0; background: var(--bg); opacity: 0; will-change: opacity; }
+  .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.05) 30%, rgba(10,10,10,0.35) 60%, rgba(10,10,10,0.75) 85%, rgba(10,10,10,0.95) 100%); }
+  .hero-content { position: relative; z-index: 2; padding: 20px 28px 20px; text-align: center; animation: fadeUp 1s ease both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
   .tag { display: inline-block; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); padding: 6px 16px; border-radius: 100px; margin-bottom: 32px; font-weight: 500; }
-
   h1 { font-family: 'Sora', sans-serif; font-size: clamp(42px, 8vw, 68px); font-weight: 600; line-height: 1.1; letter-spacing: -2px; margin-bottom: 12px; }
   h1 span { color: var(--accent); }
-
   .subtitle { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 36px; font-weight: 300; }
-
   .bio { font-size: 17px; line-height: 1.75; color: var(--text-muted); max-width: 540px; margin: 0 auto 48px; font-weight: 300; }
   .bio strong { color: var(--text); font-weight: 500; }
 
   /* --- Listen buttons --- */
   .listen-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-  .listen-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 100px; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; border: 1px solid var(--border); color: var(--text); background: rgba(17,17,17,0.8); }
+  .listen-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 100px; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; border: 1px solid var(--border); color: var(--text); background: var(--surface); }
   .listen-btn:hover { transform: translateY(-2px); border-color: var(--accent); }
   .listen-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
-  .listen-btn.yt { background: rgba(255,0,0,0.15); border-color: rgba(255,0,0,0.3); }
-  .listen-btn.yt:hover { background: rgba(255,0,0,0.25); border-color: #FF0000; }
-  .listen-btn.apple { background: rgba(168,85,247,0.15); border-color: rgba(168,85,247,0.25); }
-  .listen-btn.apple:hover { background: rgba(168,85,247,0.25); border-color: #A855F7; }
-  .listen-btn.spotify { background: rgba(30,215,96,0.15); border-color: rgba(30,215,96,0.25); }
-  .listen-btn.spotify:hover { background: rgba(30,215,96,0.25); border-color: #1ED760; }
-  .listen-btn.ig { background: rgba(228,64,95,0.15); border-color: rgba(228,64,95,0.25); }
-  .listen-btn.ig:hover { background: rgba(228,64,95,0.25); border-color: #E4405F; }
+  .listen-btn.yt { background: rgba(255,0,0,0.12); border-color: rgba(255,0,0,0.25); }
+  .listen-btn.yt:hover { background: rgba(255,0,0,0.2); border-color: #FF0000; }
+  .listen-btn.apple { background: rgba(168,85,247,0.12); border-color: rgba(168,85,247,0.2); }
+  .listen-btn.apple:hover { background: rgba(168,85,247,0.2); border-color: #A855F7; }
+  .listen-btn.spotify { background: rgba(30,215,96,0.12); border-color: rgba(30,215,96,0.2); }
+  .listen-btn.spotify:hover { background: rgba(30,215,96,0.2); border-color: #1ED760; }
+  .listen-btn.ig { background: rgba(228,64,95,0.12); border-color: rgba(228,64,95,0.2); }
+  .listen-btn.ig:hover { background: rgba(228,64,95,0.2); border-color: #E4405F; }
 
   /* --- Scroll Animations --- */
   .reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
@@ -124,66 +70,41 @@
   .reveal-right.visible { opacity: 1; transform: translateX(0); }
   .reveal-scale { opacity: 0; transform: scale(0.9); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
   .reveal-scale.visible { opacity: 1; transform: scale(1); }
-  .delay-1 { transition-delay: 0.1s; }
-  .delay-2 { transition-delay: 0.2s; }
-  .delay-3 { transition-delay: 0.3s; }
-  .delay-4 { transition-delay: 0.4s; }
+  .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; } .delay-4 { transition-delay: 0.4s; }
 
-  /* --- Glass sections (NO iframes - portrait shows through) --- */
-  .glass-section {
-    background: rgba(10,10,10,0.7);
-    padding: 48px 0;
-  }
+  /* --- Main content (solid bg) --- */
+  .main-content { background: var(--bg); position: relative; }
+  .section-pad { padding: 48px 0; }
 
-  /* --- Solid sections (WITH iframes) --- */
-  .solid-section {
-    background: rgba(10,10,10,0.95);
-    padding: 48px 0;
-  }
-
-  /* --- Divider --- */
   .divider { height: 1px; background: var(--border); margin: 0; position: relative; }
-  .divider::after { content: '◆'; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: transparent; padding: 0 16px; color: var(--accent); font-size: 8px; }
+  .divider::after { content: '\u25C6'; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--bg); padding: 0 16px; color: var(--accent); font-size: 8px; }
 
-  /* --- Topics --- */
   .topics { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
   .topic { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); padding: 8px 18px; border: 1px solid var(--border); border-radius: 100px; font-weight: 400; transition: all 0.3s; }
   .topic:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* --- Catchphrase --- */
   .catchphrase { text-align: center; padding: 20px 0; }
   .catchphrase p { font-family: 'Sora', sans-serif; font-size: clamp(20px, 4vw, 28px); font-style: italic; line-height: 1.5; color: var(--text); opacity: 0.7; max-width: 500px; margin: 0 auto; }
   .catchphrase p span { color: var(--accent); opacity: 1; }
 
-  /* --- Section labels --- */
   .section-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); text-align: center; margin-bottom: 28px; }
-
-  /* --- Two-column grid --- */
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
-  /* --- Iframe containers: SOLID backgrounds to avoid stacking issues --- */
-  .video-card { background: #111111; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; }
+  .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; }
   .video-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-3px); }
   .video-card iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
 
-  .player-card { background: #111111; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; }
+  .player-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; }
   .player-card:hover { border-color: rgba(255,255,255,0.15); }
   .player-card iframe { width: 100%; height: 100%; min-height: 450px; border: none; display: block; }
 
-  /* --- Photo Carousel --- */
-  .carousel-wrapper { overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); background: #111111; width: 100%; max-width: 100%; }
-  .carousel-track {
-    display: flex; flex-direction: row; flex-wrap: nowrap; gap: 0px; width: max-content;
-    will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden;
-    -webkit-animation: scroll-left 40s linear infinite; animation: scroll-left 40s linear infinite;
-  }
+  .carousel-wrapper { overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); width: 100%; max-width: 100%; }
+  .carousel-track { display: flex; flex-direction: row; flex-wrap: nowrap; width: max-content; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; -webkit-animation: scroll-left 40s linear infinite; animation: scroll-left 40s linear infinite; }
   .carousel-track img { height: 300px; width: auto; max-width: none; object-fit: cover; flex-shrink: 0; display: inline-block; }
-  @-webkit-keyframes scroll-left { from { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } to { -webkit-transform: translate3d(-50%,0,0); transform: translate3d(-50%,0,0); } }
+  @-webkit-keyframes scroll-left { from { -webkit-transform: translate3d(0,0,0); } to { -webkit-transform: translate3d(-50%,0,0); } }
   @keyframes scroll-left { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
 
-  /* --- Footer --- */
-  .footer-section { background: rgba(10,10,10,0.95); padding-top: 1px; }
-  footer { text-align: center; padding: 48px 28px 40px; max-width: 960px; margin: 0 auto; }
+  footer { text-align: center; padding: 48px 28px 40px; border-top: 1px solid var(--border); }
   footer p { font-size: 12px; color: var(--text-muted); letter-spacing: 1px; }
   footer a { color: var(--accent); text-decoration: none; }
   .socials { display: flex; justify-content: center; gap: 24px; margin-bottom: 20px; }
@@ -192,9 +113,8 @@
   .footer-contact { display: inline-block; font-size: 12px; color: var(--text-muted); border: 1px solid var(--border); padding: 8px 20px; border-radius: 100px; text-decoration: none; transition: all 0.3s; margin-bottom: 20px; }
   .footer-contact:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* --- Responsive --- */
   @media (max-width: 700px) {
-    .hero-spacer { padding: 20px 20px 20px; }
+    .hero-content { padding: 20px 20px 20px; }
     .listen-row { flex-direction: column; align-items: center; }
     .listen-btn { width: 100%; justify-content: center; }
     .two-col { grid-template-columns: 1fr; }
@@ -205,166 +125,148 @@
 </head>
 <body>
 
-<!-- Fixed background layers (negative z-index = behind everything) -->
-<div id="bg-image"></div>
-<div id="bg-overlay"></div>
-
-<!-- Hero -->
-<section class="hero-spacer">
-  <div class="hero-inner">
-    <div class="tag">Podcast · Deep Dives · Stories</div>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-fade" id="heroFade"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div class="tag">Podcast &middot; Deep Dives &middot; Stories</div>
     <h1>Nelson John <span>360</span></h1>
     <div class="subtitle">See the full picture</div>
   </div>
 </section>
 
-<!-- Bio + Buttons (glass) -->
-<div class="glass-section">
-  <div class="container" style="text-align:center;">
-    <div class="reveal">
-      <p class="bio">
-        News presenter and podcast host at <strong>Hindustan Times & Mint</strong>, breaking down the stories shaping our world — from <strong>AI breakthroughs</strong> and <strong>geopolitical shifts</strong> to <strong>science, innovation</strong>, and the <strong>human stories</strong> behind the headlines. No jargon. No fluff. Just clarity.
-      </p>
-      <div class="listen-row">
-        <a href="https://www.youtube.com/@nelsonjohn360" class="listen-btn yt" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.12C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.386.52A2.994 2.994 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.994 2.994 0 0 0 2.112 2.12c1.881.52 9.386.52 9.386.52s7.505 0 9.386-.52a2.994 2.994 0 0 0 2.112-2.12C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/></svg>
-          YouTube
-        </a>
-        <a href="https://podcasts.apple.com/in/podcast/nelson-john-360/id1854354375" class="listen-btn apple" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.87 19.66c-.58.84-1.2 1.67-2.14 1.69-.94.02-1.24-.56-2.31-.56s-1.4.54-2.29.58c-.92.04-1.62-.91-2.21-1.74-1.2-1.7-2.11-4.81-0.88-6.91.61-1.04 1.7-1.7 2.88-1.72.9-.02 1.76.61 2.31.61.55 0 1.59-.75 2.68-.64.46.02 1.74.18 2.56 1.39-.07.04-1.53.89-1.51 2.66.02 2.12 1.86 2.82 1.88 2.84-.02.05-.29 1.01-.97 1.8zM14.79 3.34c.49-.59 1.31-1.03 1.99-1.06.08.79-.23 1.57-.72 2.14-.48.57-1.28 1.02-2.05 0.96-.09-.76.27-1.55.78-2.04z"/></svg>
-          Apple Podcasts
-        </a>
-        <a href="https://open.spotify.com/show/16gWSQIaXRRPZkg34YI9Lk" class="listen-btn spotify" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.502 17.305c-.216.353-.677.465-1.028.249-2.818-1.722-6.365-2.111-10.542-1.157-.403.092-.806-.16-.898-.563-.092-.403.16-.806.563-.898 4.57-1.045 8.492-.595 11.656 1.34.352.216.465.677.249 1.029zm1.47-3.267c-.272.443-.851.583-1.294.311-3.225-1.982-8.142-2.557-11.958-1.399-.494.15-1.017-.13-1.167-.623-.149-.494.13-1.017.624-1.167 4.358-1.322 9.776-.682 13.484 1.584.443.272.583.851.311 1.294zm.126-3.403C15.226 8.093 8.85 7.88 5.157 9.003c-.593.18-1.22-.155-1.4-.748-.18-.593.155-1.22.748-1.4 4.239-1.29 11.285-1.04 15.738 1.62.548.318.735 1.017.417 1.56-.318.548-1.017.735-1.562.417z"/></svg>
-          Spotify
-        </a>
-        <a href="https://instagram.com/nelsonjohn360" class="listen-btn ig" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.988 4.088 4.088 0 0 1 .988 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.988 1.518 4.088 4.088 0 0 1-1.518.988c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.988 4.088 4.088 0 0 1-.988-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .988-1.518 4.088 4.088 0 0 1 1.518-.988c.46-.163 1.26-.349 2.43-.403C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a5.876 5.876 0 0 0-2.126 1.384A5.876 5.876 0 0 0 .63 4.14C.333 4.902.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.059 1.278.261 2.151.558 2.913a5.876 5.876 0 0 0 1.384 2.126A5.876 5.876 0 0 0 4.14 23.37c.762.297 1.635.499 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.059 2.151-.261 2.913-.558a5.876 5.876 0 0 0 2.126-1.384 5.876 5.876 0 0 0 1.384-2.126c.297-.762.499-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.059-1.278-.261-2.151-.558-2.913a5.876 5.876 0 0 0-1.384-2.126A5.876 5.876 0 0 0 19.86.63c-.762-.297-1.635-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-          Instagram
-        </a>
+<!-- Main Content -->
+<div class="main-content">
+  <div class="container">
+
+    <div class="section-pad" style="text-align:center;">
+      <div class="reveal">
+        <p class="bio">
+          News presenter and podcast host at <strong>Hindustan Times &amp; Mint</strong>, breaking down the stories shaping our world &mdash; from <strong>AI breakthroughs</strong> and <strong>geopolitical shifts</strong> to <strong>science, innovation</strong>, and the <strong>human stories</strong> behind the headlines. No jargon. No fluff. Just clarity.
+        </p>
+        <div class="listen-row">
+          <a href="https://www.youtube.com/@nelsonjohn360" class="listen-btn yt" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.12C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.386.52A2.994 2.994 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.994 2.994 0 0 0 2.112 2.12c1.881.52 9.386.52 9.386.52s7.505 0 9.386-.52a2.994 2.994 0 0 0 2.112-2.12C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/></svg> YouTube</a>
+          <a href="https://podcasts.apple.com/in/podcast/nelson-john-360/id1854354375" class="listen-btn apple" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.87 19.66c-.58.84-1.2 1.67-2.14 1.69-.94.02-1.24-.56-2.31-.56s-1.4.54-2.29.58c-.92.04-1.62-.91-2.21-1.74-1.2-1.7-2.11-4.81-0.88-6.91.61-1.04 1.7-1.7 2.88-1.72.9-.02 1.76.61 2.31.61.55 0 1.59-.75 2.68-.64.46.02 1.74.18 2.56 1.39-.07.04-1.53.89-1.51 2.66.02 2.12 1.86 2.82 1.88 2.84-.02.05-.29 1.01-.97 1.8zM14.79 3.34c.49-.59 1.31-1.03 1.99-1.06.08.79-.23 1.57-.72 2.14-.48.57-1.28 1.02-2.05 0.96-.09-.76.27-1.55.78-2.04z"/></svg> Apple Podcasts</a>
+          <a href="https://open.spotify.com/show/16gWSQIaXRRPZkg34YI9Lk" class="listen-btn spotify" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.502 17.305c-.216.353-.677.465-1.028.249-2.818-1.722-6.365-2.111-10.542-1.157-.403.092-.806-.16-.898-.563-.092-.403.16-.806.563-.898 4.57-1.045 8.492-.595 11.656 1.34.352.216.465.677.249 1.029zm1.47-3.267c-.272.443-.851.583-1.294.311-3.225-1.982-8.142-2.557-11.958-1.399-.494.15-1.017-.13-1.167-.623-.149-.494.13-1.017.624-1.167 4.358-1.322 9.776-.682 13.484 1.584.443.272.583.851.311 1.294zm.126-3.403C15.226 8.093 8.85 7.88 5.157 9.003c-.593.18-1.22-.155-1.4-.748-.18-.593.155-1.22.748-1.4 4.239-1.29 11.285-1.04 15.738 1.62.548.318.735 1.017.417 1.56-.318.548-1.017.735-1.562.417z"/></svg> Spotify</a>
+          <a href="https://instagram.com/nelsonjohn360" class="listen-btn ig" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.988 4.088 4.088 0 0 1 .988 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.988 1.518 4.088 4.088 0 0 1-1.518.988c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.988 4.088 4.088 0 0 1-.988-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .988-1.518 4.088 4.088 0 0 1 1.518-.988c.46-.163 1.26-.349 2.43-.403C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a5.876 5.876 0 0 0-2.126 1.384A5.876 5.876 0 0 0 .63 4.14C.333 4.902.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.059 1.278.261 2.151.558 2.913a5.876 5.876 0 0 0 1.384 2.126A5.876 5.876 0 0 0 4.14 23.37c.762.297 1.635.499 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.059 2.151-.261 2.913-.558a5.876 5.876 0 0 0 2.126-1.384 5.876 5.876 0 0 0 1.384-2.126c.297-.762.499-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.059-1.278-.261-2.151-.558-2.913a5.876 5.876 0 0 0-1.384-2.126A5.876 5.876 0 0 0 19.86.63c-.762-.297-1.635-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg> Instagram</a>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Topics (glass) -->
-<div class="glass-section">
-  <div class="container">
-    <div class="topics reveal">
-      <span class="topic delay-1">AI & Tech</span>
-      <span class="topic delay-2">Geopolitics</span>
-      <span class="topic delay-3">Science</span>
-      <span class="topic delay-4">Innovation</span>
-      <span class="topic delay-4">Human Interest</span>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Catchphrase (glass) -->
-<div class="glass-section">
-  <div class="container">
-    <section class="catchphrase reveal">
-      <p>"Every story has <span>360 degrees</span>.<br>Most people only see one."</p>
-    </section>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Carousel (solid bg) -->
-<div class="glass-section">
-  <div class="container">
-    <div class="carousel-wrapper reveal-scale">
-      <div class="carousel-track">
-        <img src="photo1.jpg" alt="Photo 1"><img src="photo2.jpg" alt="Photo 2"><img src="photo3.jpg" alt="Photo 3"><img src="photo4.jpg" alt="Photo 4"><img src="photo5.jpg" alt="Photo 5"><img src="photo6.jpg" alt="Photo 6"><img src="photo7.jpg" alt="Photo 7"><img src="photo8.jpg" alt="Photo 8"><img src="photo9.jpg" alt="Photo 9"><img src="photo10.jpg" alt="Photo 10"><img src="photo11.jpg" alt="Photo 11"><img src="photo12.jpg" alt="Photo 12"><img src="photo13.jpg" alt="Photo 13"><img src="photo1.jpg" alt="Photo 1"><img src="photo2.jpg" alt="Photo 2"><img src="photo3.jpg" alt="Photo 3"><img src="photo4.jpg" alt="Photo 4"><img src="photo5.jpg" alt="Photo 5"><img src="photo6.jpg" alt="Photo 6"><img src="photo7.jpg" alt="Photo 7"><img src="photo8.jpg" alt="Photo 8"><img src="photo9.jpg" alt="Photo 9"><img src="photo10.jpg" alt="Photo 10"><img src="photo11.jpg" alt="Photo 11"><img src="photo12.jpg" alt="Photo 12"><img src="photo13.jpg" alt="Photo 13">
+    <div class="section-pad">
+      <div class="topics reveal">
+        <span class="topic delay-1">AI &amp; Tech</span>
+        <span class="topic delay-2">Geopolitics</span>
+        <span class="topic delay-3">Science</span>
+        <span class="topic delay-4">Innovation</span>
+        <span class="topic delay-4">Human Interest</span>
       </div>
     </div>
+
+    <div class="divider"></div>
+
+    <div class="section-pad">
+      <section class="catchphrase reveal">
+        <p>&ldquo;Every story has <span>360 degrees</span>.<br>Most people only see one.&rdquo;</p>
+      </section>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-pad">
+      <div class="carousel-wrapper reveal-scale">
+        <div class="carousel-track">
+          <img src="photo1.jpg" alt="Photo 1"><img src="photo2.jpg" alt="Photo 2"><img src="photo3.jpg" alt="Photo 3"><img src="photo4.jpg" alt="Photo 4"><img src="photo5.jpg" alt="Photo 5"><img src="photo6.jpg" alt="Photo 6"><img src="photo7.jpg" alt="Photo 7"><img src="photo8.jpg" alt="Photo 8"><img src="photo9.jpg" alt="Photo 9"><img src="photo10.jpg" alt="Photo 10"><img src="photo11.jpg" alt="Photo 11"><img src="photo12.jpg" alt="Photo 12"><img src="photo13.jpg" alt="Photo 13"><img src="photo1.jpg" alt="Photo 1"><img src="photo2.jpg" alt="Photo 2"><img src="photo3.jpg" alt="Photo 3"><img src="photo4.jpg" alt="Photo 4"><img src="photo5.jpg" alt="Photo 5"><img src="photo6.jpg" alt="Photo 6"><img src="photo7.jpg" alt="Photo 7"><img src="photo8.jpg" alt="Photo 8"><img src="photo9.jpg" alt="Photo 9"><img src="photo10.jpg" alt="Photo 10"><img src="photo11.jpg" alt="Photo 11"><img src="photo12.jpg" alt="Photo 12"><img src="photo13.jpg" alt="Photo 13">
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-pad">
+      <p class="section-label reveal">Watch</p>
+      <div class="two-col">
+        <div class="video-card reveal-left">
+          <iframe src="https://www.youtube.com/embed/videoseries?list=PLeabQ2bzfMRZm1FOLehmQSMcCNPBqN1Tf" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card reveal-right">
+          <iframe src="https://www.youtube.com/embed/videoseries?list=PL2A-r6Y8n7prKj5U2oKXAcUM7sQAMT5MF" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-pad">
+      <p class="section-label reveal">Listen Now</p>
+      <div class="player-card reveal-scale">
+        <iframe src="https://embed.podcasts.apple.com/in/podcast/nelson-john-360/id1854354375?theme=dark" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" style="width:100%;height:450px;border:none;border-radius:14px;overflow:hidden;background:transparent;"></iframe>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-pad">
+      <p class="section-label reveal">More</p>
+      <div class="two-col">
+        <div class="player-card reveal-left">
+          <iframe src="https://open.spotify.com/embed/show/16gWSQIaXRRPZkg34YI9Lk?utm_source=generator&amp;theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="width:100%;height:450px;border:none;border-radius:14px;" loading="lazy"></iframe>
+        </div>
+        <div class="video-card reveal-right" style="min-height:450px;">
+          <iframe src="https://www.instagram.com/nelsonjohn360/embed" style="width:100%;height:100%;min-height:450px;border:none;" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <footer class="reveal">
+      <a href="mailto:nelsonjohn.podcast&#64;gmail.com" class="footer-contact">Get in touch</a>
+      <div class="socials">
+        <a href="https://instagram.com/nelsonjohn360" target="_blank" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.988 4.088 4.088 0 0 1 .988 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.988 1.518 4.088 4.088 0 0 1-1.518.988c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.988 4.088 4.088 0 0 1-.988-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .988-1.518 4.088 4.088 0 0 1 1.518-.988c.46-.163 1.26-.349 2.43-.403C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a5.876 5.876 0 0 0-2.126 1.384A5.876 5.876 0 0 0 .63 4.14C.333 4.902.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.059 1.278.261 2.151.558 2.913a5.876 5.876 0 0 0 1.384 2.126A5.876 5.876 0 0 0 4.14 23.37c.762.297 1.635.499 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.059 2.151-.261 2.913-.558a5.876 5.876 0 0 0 2.126-1.384 5.876 5.876 0 0 0 1.384-2.126c.297-.762.499-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.059-1.278-.261-2.151-.558-2.913a5.876 5.876 0 0 0-1.384-2.126A5.876 5.876 0 0 0 19.86.63c-.762-.297-1.635-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+        <a href="https://www.youtube.com/@nelsonjohn360" target="_blank" title="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.12C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.386.52A2.994 2.994 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.994 2.994 0 0 0 2.112 2.12c1.881.52 9.386.52 9.386.52s7.505 0 9.386-.52a2.994 2.994 0 0 0 2.112-2.12C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/></svg></a>
+        <a href="https://open.spotify.com/show/16gWSQIaXRRPZkg34YI9Lk" target="_blank" title="Spotify"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.502 17.305c-.216.353-.677.465-1.028.249-2.818-1.722-6.365-2.111-10.542-1.157-.403.092-.806-.16-.898-.563-.092-.403.16-.806.563-.898 4.57-1.045 8.492-.595 11.656 1.34.352.216.465.677.249 1.029zm1.47-3.267c-.272.443-.851.583-1.294.311-3.225-1.982-8.142-2.557-11.958-1.399-.494.15-1.017-.13-1.167-.623-.149-.494.13-1.017.624-1.167 4.358-1.322 9.776-.682 13.484 1.584.443.272.583.851.311 1.294zm.126-3.403C15.226 8.093 8.85 7.88 5.157 9.003c-.593.18-1.22-.155-1.4-.748-.18-.593.155-1.22.748-1.4 4.239-1.29 11.285-1.04 15.738 1.62.548.318.735 1.017.417 1.56-.318.548-1.017.735-1.562.417z"/></svg></a>
+        <a href="https://podcasts.apple.com/in/podcast/nelson-john-360/id1854354375" target="_blank" title="Apple Podcasts"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.87 19.66c-.58.84-1.2 1.67-2.14 1.69-.94.02-1.24-.56-2.31-.56s-1.4.54-2.29.58c-.92.04-1.62-.91-2.21-1.74-1.2-1.7-2.11-4.81-0.88-6.91.61-1.04 1.7-1.7 2.88-1.72.9-.02 1.76.61 2.31.61.55 0 1.59-.75 2.68-.64.46.02 1.74.18 2.56 1.39-.07.04-1.53.89-1.51 2.66.02 2.12 1.86 2.82 1.88 2.84-.02.05-.29 1.01-.97 1.8zM14.79 3.34c.49-.59 1.31-1.03 1.99-1.06.08.79-.23 1.57-.72 2.14-.48.57-1.28 1.02-2.05 0.96-.09-.76.27-1.55.78-2.04z"/></svg></a>
+      </div>
+      <p>&copy; 2026 Nelson John 360 &middot; Made with &#9749; in Bangalore</p>
+    </footer>
+
   </div>
 </div>
 
-<div class="divider"></div>
-
-<!-- YouTube -->
-<div class="solid-section">
-  <div class="container">
-    <p class="section-label reveal">Watch</p>
-    <div class="two-col">
-      <div class="video-card reveal-left">
-        <iframe src="https://www.youtube.com/embed/videoseries?list=PLeabQ2bzfMRZm1FOLehmQSMcCNPBqN1Tf" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="video-card reveal-right">
-        <iframe src="https://www.youtube.com/embed/videoseries?list=PL2A-r6Y8n7prKj5U2oKXAcUM7sQAMT5MF" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Apple Podcast -->
-<div class="solid-section">
-  <div class="container">
-    <p class="section-label reveal">Listen Now</p>
-    <div class="player-card reveal-scale">
-      <iframe src="https://embed.podcasts.apple.com/in/podcast/nelson-john-360/id1854354375?theme=dark" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" style="width:100%;height:450px;border:none;border-radius:14px;overflow:hidden;background:transparent;"></iframe>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Spotify + Instagram -->
-<div class="solid-section">
-  <div class="container">
-    <p class="section-label reveal">More</p>
-    <div class="two-col">
-      <div class="player-card reveal-left">
-        <iframe src="https://open.spotify.com/embed/show/16gWSQIaXRRPZkg34YI9Lk?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="width:100%;height:450px;border:none;border-radius:14px;" loading="lazy"></iframe>
-      </div>
-      <div class="video-card reveal-right" style="min-height:450px;">
-        <iframe src="https://www.instagram.com/nelsonjohn360/embed" style="width:100%;height:100%;min-height:450px;border:none;" loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Footer -->
-<div class="footer-section">
-  <footer class="reveal">
-    <a href="/cdn-cgi/l/email-protection#c7a9a2abb4a8a9ada8afa9e9b7a8a3a4a6b4b387a0aaa6aeabe9a4a8aa" class="footer-contact">Get in touch</a>
-    <div class="socials">
-      <a href="https://instagram.com/nelsonjohn360" target="_blank" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.988 4.088 4.088 0 0 1 .988 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.988 1.518 4.088 4.088 0 0 1-1.518.988c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.988 4.088 4.088 0 0 1-.988-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .988-1.518 4.088 4.088 0 0 1 1.518-.988c.46-.163 1.26-.349 2.43-.403C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a5.876 5.876 0 0 0-2.126 1.384A5.876 5.876 0 0 0 .63 4.14C.333 4.902.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.059 1.278.261 2.151.558 2.913a5.876 5.876 0 0 0 1.384 2.126A5.876 5.876 0 0 0 4.14 23.37c.762.297 1.635.499 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.059 2.151-.261 2.913-.558a5.876 5.876 0 0 0 2.126-1.384 5.876 5.876 0 0 0 1.384-2.126c.297-.762.499-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.059-1.278-.261-2.151-.558-2.913a5.876 5.876 0 0 0-1.384-2.126A5.876 5.876 0 0 0 19.86.63c-.762-.297-1.635-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
-      <a href="https://www.youtube.com/@nelsonjohn360" target="_blank" title="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.12C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.386.52A2.994 2.994 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.994 2.994 0 0 0 2.112 2.12c1.881.52 9.386.52 9.386.52s7.505 0 9.386-.52a2.994 2.994 0 0 0 2.112-2.12C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/></svg></a>
-      <a href="https://open.spotify.com/show/16gWSQIaXRRPZkg34YI9Lk" target="_blank" title="Spotify"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.502 17.305c-.216.353-.677.465-1.028.249-2.818-1.722-6.365-2.111-10.542-1.157-.403.092-.806-.16-.898-.563-.092-.403.16-.806.563-.898 4.57-1.045 8.492-.595 11.656 1.34.352.216.465.677.249 1.029zm1.47-3.267c-.272.443-.851.583-1.294.311-3.225-1.982-8.142-2.557-11.958-1.399-.494.15-1.017-.13-1.167-.623-.149-.494.13-1.017.624-1.167 4.358-1.322 9.776-.682 13.484 1.584.443.272.583.851.311 1.294zm.126-3.403C15.226 8.093 8.85 7.88 5.157 9.003c-.593.18-1.22-.155-1.4-.748-.18-.593.155-1.22.748-1.4 4.239-1.29 11.285-1.04 15.738 1.62.548.318.735 1.017.417 1.56-.318.548-1.017.735-1.562.417z"/></svg></a>
-      <a href="https://podcasts.apple.com/in/podcast/nelson-john-360/id1854354375" target="_blank" title="Apple Podcasts"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.87 19.66c-.58.84-1.2 1.67-2.14 1.69-.94.02-1.24-.56-2.31-.56s-1.4.54-2.29.58c-.92.04-1.62-.91-2.21-1.74-1.2-1.7-2.11-4.81-0.88-6.91.61-1.04 1.7-1.7 2.88-1.72.9-.02 1.76.61 2.31.61.55 0 1.59-.75 2.68-.64.46.02 1.74.18 2.56 1.39-.07.04-1.53.89-1.51 2.66.02 2.12 1.86 2.82 1.88 2.84-.02.05-.29 1.01-.97 1.8zM14.79 3.34c.49-.59 1.31-1.03 1.99-1.06.08.79-.23 1.57-.72 2.14-.48.57-1.28 1.02-2.05 0.96-.09-.76.27-1.55.78-2.04z"/></svg></a>
-    </div>
-    <p>&copy; 2026 Nelson John 360 &middot; Made with ☕ in Bangalore</p>
-  </footer>
-</div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // --- Background fade to black on scroll ---
-  var overlay = document.getElementById('bg-overlay');
+<script>
+  // Parallax + fade on hero image
+  var heroBg = document.getElementById('heroBg');
+  var heroFade = document.getElementById('heroFade');
   window.addEventListener('scroll', function() {
-    var scrolled = window.scrollY;
+    var s = window.scrollY;
     var vh = window.innerHeight;
-    var fadeStart = vh * 0.5;
-    var fadeEnd = vh * 3;
+    // Parallax: image moves at 40% of scroll speed
+    heroBg.style.transform = 'translate3d(0,' + (s * 0.4) + 'px,0)';
+    // Fade to black as you scroll past hero
+    var fadeStart = vh * 0.3;
+    var fadeEnd = vh * 1.2;
     var opacity = 0;
-    if (scrolled > fadeStart) {
-      opacity = Math.min((scrolled - fadeStart) / (fadeEnd - fadeStart), 1);
-    }
-    overlay.style.opacity = opacity;
+    if (s > fadeStart) { opacity = Math.min((s - fadeStart) / (fadeEnd - fadeStart), 1); }
+    heroFade.style.opacity = opacity;
   }, { passive: true });
 
-  // --- Scroll-triggered reveal animations ---
+  // Scroll reveal animations
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        var delays = entry.target.querySelectorAll('[class*="delay-"]');
- 
+        var d = entry.target.querySelectorAll('[class*="delay-"]');
+        for (var i = 0; i < d.length; i++) d[i].classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  for (var i = 0; i < els.length; i++) observer.observe(els[i]);
+</script>
+
+</body>
+</html>
