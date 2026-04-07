@@ -44,10 +44,10 @@
   .container { max-width: 960px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
 
   /* --- Hero --- */
-  .hero-wrap { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; width: 100%; }
+  .hero-wrap { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; width: 100%; }
   .hero-bg { position: absolute; inset: 0; background: url('portrait.jpg') center center / cover no-repeat; z-index: 0; }
   .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.55) 40%, rgba(10,10,10,0.85) 75%, rgba(10,10,10,1) 100%); }
-  .hero { position: relative; z-index: 1; padding: 120px 28px 80px; text-align: center; animation: fadeUp 1s ease both; }
+  .hero { position: relative; z-index: 1; padding: 40px 28px 60px; text-align: center; animation: fadeUp 1s ease both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
   .tag { display: inline-block; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); padding: 6px 16px; border-radius: 100px; margin-bottom: 32px; font-weight: 500; }
@@ -125,11 +125,12 @@
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 0px;
-    animation: scroll-left 40s linear infinite;
     width: max-content;
     will-change: transform;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    -webkit-animation: scroll-left 40s linear infinite;
+    animation: scroll-left 40s linear infinite;
   }
   .carousel-track img {
     height: 300px;
@@ -139,8 +140,9 @@
     flex-shrink: 0;
     display: inline-block;
   }
-  .carousel-wrapper:hover .carousel-track {
-    animation-play-state: paused;
+  @-webkit-keyframes scroll-left {
+    from { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+    to { -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
   }
   @keyframes scroll-left {
     from { transform: translate3d(0, 0, 0); }
