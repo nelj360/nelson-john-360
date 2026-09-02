@@ -395,6 +395,7 @@ function submitForm() {
   data.append('phone', document.getElementById('f_phone').value);
   data.append('event_date', document.getElementById('f_date').value);
   data.append('event_type', document.getElementById('f_type').value);
+    data.append('performance_format', document.getElementById('f_format').value);
   data.append('message', document.getElementById('f_message').value);
 
   fetch('https://formspree.io/f/xgaeyard', {
