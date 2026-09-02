@@ -3,106 +3,296 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nelson John — News Presenter · Podcast Host · Musician</title>
-<meta name="description" content="ACEF Gold Award-winning news presenter, podcast host, and live music performer. Host of Top of the Morning (HT & Mint) and Nelson John 360.">
-<meta property="og:title" content="Nelson John">
-<meta property="og:description" content="ACEF Gold Award-winning news presenter, podcast host, and live music performer.">
+<title>Nelson John Music — Live Saxophone, Vocals & Guitar</title>
+<meta name="description" content="Live saxophone, vocals, and guitar for weddings, corporate events, hotel residencies, and private occasions. 25+ years performing. Based in Bangalore.">
+<meta property="og:title" content="Nelson John Music">
+<meta property="og:description" content="Live saxophone, vocals, and guitar for weddings, corporate events, and private occasions. Based in Bangalore.">
 <meta property="og:image" content="https://nelsonjohn.in/og-image.jpg">
-<meta property="og:url" content="https://nelsonjohn.in">
+<meta property="og:url" content="https://nelsonjohn.in/music/">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nelson John">
-<meta name="twitter:description" content="ACEF Gold Award-winning news presenter, podcast host, and live music performer.">
-<meta name="twitter:image" content="https://nelsonjohn.in/og-image.jpg">
-<link rel="canonical" href="https://nelsonjohn.in">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23E8C872'/%3E%3Ctext x='50' y='56' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-weight='700' font-size='38' fill='%230A0A0A'%3ENJ%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;background:#0A0A0A;color:#F0EDE6;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;align-items:center;justify-content:center}
+:root{--bg:#0A0A0A;--surface:rgba(17,17,17,0.85);--text:#F0EDE6;--muted:#8A857D;--accent:#E8C872;--accent-dim:rgba(232,200,114,0.12);--border:rgba(255,255,255,0.08);--radius:14px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
 
-body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:999}
+.fixed-bg{position:fixed;inset:0;background:url('../music-portrait.jpg') center 10% / cover no-repeat;z-index:0}
+.fixed-bg::after{content:'';position:fixed;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0) 0%,rgba(10,10,10,0.1) 30%,rgba(10,10,10,0.5) 60%,rgba(10,10,10,0.9) 85%,rgba(10,10,10,1) 100%);z-index:1}
+.fixed-bg-overlay{position:fixed;inset:0;background:var(--bg);opacity:0;z-index:1;pointer-events:none}
 
-.glow{position:fixed;width:500px;height:500px;border-radius:50%;filter:blur(160px);pointer-events:none;z-index:0}
-.glow-1{background:#E8C872;top:-200px;left:50%;transform:translateX(-50%);opacity:0.06}
+.page-content{position:relative;z-index:2}
+.container{max-width:960px;margin:0 auto;padding:0 28px}
 
-.wrapper{position:relative;z-index:1;text-align:center;padding:40px 28px;max-width:1000px;width:100%}
+.back-link{position:fixed;top:24px;left:28px;z-index:100;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:8px 16px;border:1px solid var(--border);border-radius:100px;backdrop-filter:blur(10px);transition:all 0.3s}
+.back-link:hover{color:var(--accent);border-color:var(--accent)}
 
-.name{font-family:'Sora',sans-serif;font-size:clamp(32px,6vw,52px);font-weight:700;letter-spacing:-2px;margin-bottom:8px;animation:fadeIn 1s ease both}
-.name span{color:#E8C872}
+.hero-spacer{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 28px 20px;text-align:center}
+.tag{display:inline-block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);padding:6px 16px;border-radius:100px;margin-bottom:32px;font-weight:500;backdrop-filter:blur(10px)}
+h1{font-family:'Sora',sans-serif;font-size:clamp(42px,8vw,68px);font-weight:600;line-height:1.1;letter-spacing:-2px;margin-bottom:12px}
+h1 span{color:var(--accent)}
+.subtitle{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:36px;font-weight:300}
 
-.tagline{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#8A857D;margin-bottom:60px;font-weight:300;animation:fadeIn 1s 0.2s ease both}
+.bio{font-size:17px;line-height:1.75;color:var(--text);max-width:540px;margin:0 auto 48px;font-weight:300}
+.bio strong{color:var(--accent);font-weight:500}
 
-.doors{display:grid;grid-template-columns:1fr 1fr;gap:24px;animation:fadeUp 1s 0.4s ease both}
+.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:28px}
 
-.door{position:relative;border-radius:16px;overflow:hidden;cursor:pointer;text-decoration:none;color:#F0EDE6;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);border:1px solid rgba(255,255,255,0.06);aspect-ratio:2/3;display:flex;flex-direction:column;justify-content:flex-end;padding:40px}
-.door:hover{transform:translateY(-6px);border-color:#E8C872}
+.reveal{opacity:0;transform:translateY(50px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-60px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(60px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(0.9);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
 
-.door-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.6s ease}
-.door:hover .door-bg{transform:scale(1.05)}
-.door::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0) 0%,rgba(10,10,10,0.4) 40%,rgba(10,10,10,0.9) 80%,rgba(10,10,10,1) 100%);z-index:1}
+.divider{height:1px;background:var(--border);margin:60px 0;position:relative}
+.divider::after{content:'◆';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--bg);padding:0 16px;color:var(--accent);font-size:8px}
 
-.door-content{position:relative;z-index:2}
+.formats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px}
+.format-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;backdrop-filter:blur(12px);transition:all 0.3s}
+.format-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.format-icon{font-size:28px;margin-bottom:12px}
+.format-title{font-family:'Sora',sans-serif;font-size:18px;font-weight:600;margin-bottom:8px;transition:color 0.3s}
+.format-desc{font-size:14px;color:var(--muted);line-height:1.6;font-weight:300}
+.format-card.clickable{cursor:pointer}
+.format-card.clickable:hover .format-title{color:var(--accent)}
+.play-badge{display:inline-block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-top:10px}
 
-.door-icon{font-size:28px;margin-bottom:12px}
+.genres{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+.genre{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:8px 18px;border:1px solid var(--border);border-radius:100px;font-weight:400;transition:all 0.3s;background:rgba(17,17,17,0.5);backdrop-filter:blur(8px)}
+.genre:hover{border-color:var(--accent);color:var(--accent)}
 
-.door-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#E8C872;background:rgba(232,200,114,0.12);padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px}
+.catchphrase{text-align:center;padding:40px 0}
+.catchphrase p{font-family:'Sora',sans-serif;font-size:clamp(20px,4vw,28px);font-style:italic;line-height:1.5;color:var(--text);opacity:0.7;max-width:500px;margin:0 auto}
+.catchphrase p span{color:var(--accent);opacity:1}
 
-.door-title{font-family:'Sora',sans-serif;font-size:clamp(22px,4vw,30px);font-weight:600;letter-spacing:-1px;margin-bottom:8px}
+.cta-section{text-align:center;padding:40px 0}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:100px;text-decoration:none;font-size:15px;font-weight:600;background:var(--accent);color:#0A0A0A;transition:all 0.3s;border:none;cursor:pointer}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,200,114,0.3)}
+.cta-sub{font-size:13px;color:var(--muted);margin-top:12px}
 
-.door-desc{font-size:14px;color:#8A857D;line-height:1.5;font-weight:300}
+.listen-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.listen-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:100px;text-decoration:none;font-size:14px;font-weight:500;transition:all 0.3s ease;border:1px solid var(--border);color:var(--text);background:rgba(17,17,17,0.6);backdrop-filter:blur(12px)}
+.listen-btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.listen-btn svg{width:20px;height:20px;flex-shrink:0}
+.listen-btn.yt{background:rgba(255,0,0,0.1);border-color:rgba(255,0,0,0.25)}
+.listen-btn.yt:hover{background:rgba(255,0,0,0.2);border-color:#FF0000}
+.listen-btn.ig{background:rgba(228,64,95,0.1);border-color:rgba(228,64,95,0.2)}
+.listen-btn.ig:hover{background:rgba(228,64,95,0.2);border-color:#E4405F}
 
-.door-arrow{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#E8C872;opacity:0;transform:translateY(8px);transition:all 0.4s ease}
-.door:hover .door-arrow{opacity:1;transform:translateY(0)}
+.video-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all 0.3s;backdrop-filter:blur(12px)}
+.video-card:hover{border-color:rgba(255,255,255,0.15);transform:translateY(-3px)}
+.video-card iframe{width:100%;aspect-ratio:16/9;border:none;display:block}
 
-.footer{margin-top:60px;font-size:11px;color:#8A857D;letter-spacing:1px;animation:fadeIn 1s 0.6s ease both}
-.footer a{color:#E8C872;text-decoration:none}
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
+.modal-overlay.open{display:flex}
+.modal-box{background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:16px;width:100%;max-width:400px;overflow:hidden;position:relative}
+.modal-box iframe{width:100%;aspect-ratio:9/16;border:none;display:block}
+.modal-close{position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.7);color:var(--accent);border:1px solid rgba(232,200,114,0.3);width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;z-index:10001;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+.modal-close:hover{background:var(--accent);color:#0A0A0A}
 
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+footer{text-align:center;padding:48px 0 40px;border-top:1px solid var(--border)}
+footer p{font-size:12px;color:var(--muted);letter-spacing:1px}
+footer a{color:var(--accent);text-decoration:none}
+.socials{display:flex;justify-content:center;gap:24px;margin-bottom:20px}
+.socials a{color:var(--muted);transition:all 0.3s;text-decoration:none;display:flex;align-items:center}
+.socials a:hover{color:var(--accent);transform:translateY(-2px)}
 
-@media(max-width:600px){
-  .doors{grid-template-columns:1fr;gap:16px}
-  .door{aspect-ratio:4/3;padding:24px}
+@media(max-width:700px){
+  .hero-spacer{padding:20px 20px 30px}
+  .formats{grid-template-columns:1fr}
+  .listen-row{flex-direction:column;align-items:center}
+  .listen-btn{width:100%;justify-content:center}
+  .modal-box{max-width:90%}
 }
 </style>
 </head>
 <body>
 
-<div class="glow glow-1"></div>
+<div class="fixed-bg"></div>
+<div class="fixed-bg-overlay" id="bgOverlay"></div>
 
-<div class="wrapper">
+<!-- Video Modal -->
+<div class="modal-overlay" id="videoModal" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">&#10005;</button>
+    <iframe id="modalVideo" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
 
-  <h1 class="name">Nelson <span>John</span></h1>
-  <p class="tagline">Choose your world</p>
+<a href="/" class="back-link">&#8592; Nelson John</a>
 
-  <div class="doors">
+<div class="page-content">
 
-    <a href="/360/" class="door">
-      <div class="door-bg" style="background-image:url('portrait.jpg')"></div>
-      <div class="door-content">
-        <div class="door-label">News · Podcasts · Digital</div>
-        <h2 class="door-title">Nelson John 360</h2>
-        <p class="door-desc">AI, geopolitics, science, and the stories shaping our world. Deep dives from a ACEF Gold Award-winning news presenter.</p>
-        <div class="door-arrow">Explore &#8594;</div>
+  <section class="hero-spacer">
+    <div>
+      <div class="tag">Live Music · Events · Sessions</div>
+      <h1>Nelson John <span>Music</span></h1>
+      <div class="subtitle">25+ years of soul</div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <div style="text-align:center;padding:48px 0;">
+      <p class="bio">
+        <strong>Saxophone</strong>, <strong>vocals</strong>, and <strong>guitar</strong> for the moments that matter. From luxury weddings and corporate galas to intimate lounge sessions and hotel residencies. Performing <strong>jazz, soul, R&B, pop</strong>, and <strong>Bollywood</strong> with 25+ years on stage.
+      </p>
+      <div class="listen-row">
+        <a href="https://www.youtube.com/@nelsonjohnmusic" class="listen-btn yt" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.12C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.386.52A2.994 2.994 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.994 2.994 0 0 0 2.112 2.12c1.881.52 9.386.52 9.386.52s7.505 0 9.386-.52a2.994 2.994 0 0 0 2.112-2.12C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/></svg>
+          YouTube
+        </a>
+        <a href="https://instagram.com/nelsonjohnmusic" class="listen-btn ig" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.988 4.088 4.088 0 0 1 .988 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.988 1.518 4.088 4.088 0 0 1-1.518.988c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.988 4.088 4.088 0 0 1-.988-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .988-1.518 4.088 4.088 0 0 1 1.518-.988c.46-.163 1.26-.349 2.43-.403C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a5.876 5.876 0 0 0-2.126 1.384A5.876 5.876 0 0 0 .63 4.14C.333 4.902.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.059 1.278.261 2.151.558 2.913a5.876 5.876 0 0 0 1.384 2.126A5.876 5.876 0 0 0 4.14 23.37c.762.297 1.635.499 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.059 2.151-.261 2.913-.558a5.876 5.876 0 0 0 2.126-1.384 5.876 5.876 0 0 0 1.384-2.126c.297-.762.499-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.059-1.278-.261-2.151-.558-2.913a5.876 5.876 0 0 0-1.384-2.126A5.876 5.876 0 0 0 19.86.63c-.762-.297-1.635-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          Instagram
+        </a>
       </div>
-    </a>
+    </div>
 
-    <a href="/music/" class="door">
-      <div class="door-bg" style="background-image:url('music-portrait.jpg')"></div>
-      <div class="door-content">
-        <div class="door-label">Live Music · Events</div>
-        <h2 class="door-title">Nelson John Music</h2>
-        <p class="door-desc">Saxophone, vocals, and guitar. 25+ years of Pop, Rock, Soul, and Bollywood for weddings, events, and intimate venues.</p>
-        <div class="door-arrow">Explore &#8594;</div>
+    <!-- Genres -->
+    <div class="genres reveal">
+      <span class="genre">Jazz</span>
+      <span class="genre">Soul & R&B</span>
+      <span class="genre">Pop</span>
+      <span class="genre">Bollywood</span>
+      <span class="genre">Retro</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <section class="catchphrase reveal">
+      <p>"Music doesn't just <span>fill a room</span>.<br>It changes how the room <span>feels</span>."</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Performance Formats -->
+    <p class="section-label reveal">Performance Formats</p>
+    <div class="formats">
+      <div class="format-card reveal-scale clickable" style="grid-column:1/-1;text-align:center;" onclick="openModal('TJ7T6WXVt8A')">
+        <div class="format-icon">🎷</div>
+        <div class="format-title">Solo Sax Performance</div>
+        <div class="format-desc">Nelson plays an all-instrumental set on the saxophone over curated backing tracks. Popular English and Bollywood tunes reimagined through the sax. Perfect for cocktail parties, sundowners, and DJ nights.</div>
+        <div class="play-badge">&#9654; Watch Demo</div>
       </div>
-    </a>
+      <div class="format-card reveal-left">
+        <div class="format-icon">🎸</div>
+        <div class="format-title">Solo Performance</div>
+        <div class="format-desc">Nelson on vocals, guitar, and backing tracks. A personalised, intimate set perfect for smaller venues, private dinners, house parties, and cosy events where the music feels up close.</div>
+      </div>
+      <div class="format-card reveal-right">
+        <div class="format-icon">🎤</div>
+        <div class="format-title">Duo Performance</div>
+        <div class="format-desc">Nelson on vocals and guitar alongside a female vocalist. English superhits and Bollywood favourites. The energy scales from up-tempo, dancey sets to a smooth, moderate lounge vibe.</div>
+      </div>
+      <div class="format-card reveal-left clickable" onclick="openModal('qZ9JnaXCnxM')">
+        <div class="format-icon">🎹</div>
+        <div class="format-title">Sax & Piano Duo</div>
+        <div class="format-desc">Saxophone paired with grand piano. Elegant and refined for hotel lobbies, lounge settings, private ceremonies, and fine dining.</div>
+        <div class="play-badge">&#9654; Watch Demo</div>
+      </div>
+      <div class="format-card reveal-right clickable" onclick="openModal('cpV6hY7h3Z0')">
+        <div class="format-icon">🎷</div>
+        <div class="format-title">Full Band</div>
+        <div class="format-desc">Nelson on vocals, guitars, and sax fronting a 4-5 piece band with electric guitar, bass, drums, and elaborate arrangements. A bigger stage and a bigger sound for corporate shows, large private events, and celebrations that need real impact.</div>
+        <div class="play-badge">&#9654; Watch Demo</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Video Section -->
+    <p class="section-label reveal">Watch</p>
+    <div class="video-card reveal-scale" style="margin-bottom:48px;">
+      <iframe src="https://www.youtube.com/embed/5ez6s-7JJk8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Ideal For -->
+    <p class="section-label reveal">Ideal For</p>
+    <div class="genres reveal">
+      <span class="genre">Luxury Weddings</span>
+      <span class="genre">Destination Weddings</span>
+      <span class="genre">Corporate Events</span>
+      <span class="genre">Hotel Residencies</span>
+      <span class="genre">Private Parties</span>
+      <span class="genre">Cocktail Evenings</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <div class="cta-section reveal">
+      <a href="mailto:connect@nelsonjohn.in" class="cta-btn">Book Nelson John</a>
+      <p class="cta-sub">Based in Bangalore. Available across India and internationally.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Footer -->
+    <footer class="reveal">
+      <div class="socials">
+        <a href="https://instagram.com/nelsonjohnmusic" target="_blank" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 0 1 1.518.988 4.088 4.088 0 0 1 .988 1.518c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 0 1-.988 1.518 4.088 4.088 0 0 1-1.518.988c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 0 1-1.518-.988 4.088 4.088 0 0 1-.988-1.518c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 0 1 .988-1.518 4.088 4.088 0 0 1 1.518-.988c.46-.163 1.26-.349 2.43-.403C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a5.876 5.876 0 0 0-2.126 1.384A5.876 5.876 0 0 0 .63 4.14C.333 4.902.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.059 1.278.261 2.151.558 2.913a5.876 5.876 0 0 0 1.384 2.126A5.876 5.876 0 0 0 4.14 23.37c.762.297 1.635.499 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.059 2.151-.261 2.913-.558a5.876 5.876 0 0 0 2.126-1.384 5.876 5.876 0 0 0 1.384-2.126c.297-.762.499-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.059-1.278-.261-2.151-.558-2.913a5.876 5.876 0 0 0-1.384-2.126A5.876 5.876 0 0 0 19.86.63c-.762-.297-1.635-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+        <a href="https://www.youtube.com/@nelsonjohnmusic" target="_blank" title="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.12C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.386.52A2.994 2.994 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.994 2.994 0 0 0 2.112 2.12c1.881.52 9.386.52 9.386.52s7.505 0 9.386-.52a2.994 2.994 0 0 0 2.112-2.12C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/></svg></a>
+      </div>
+      <p>&copy; 2026 Nelson John Music &middot; Bangalore, India</p>
+    </footer>
 
   </div>
-
-  <p class="footer"><a href="mailto:connect@nelsonjohn.in">connect@nelsonjohn.in</a></p>
-
 </div>
+
+<script>
+var bgOverlay = document.getElementById('bgOverlay');
+var vh = window.innerHeight;
+
+window.addEventListener('scroll', function() {
+  var s = window.scrollY;
+  var fadeStart = vh * 0.5;
+  var fadeEnd = vh * 3;
+  var opacity = 0;
+  if (s > fadeStart) {
+    opacity = Math.min((s - fadeStart) / (fadeEnd - fadeStart), 1);
+  }
+  bgOverlay.style.opacity = opacity;
+}, { passive: true });
+
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+var elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+for (var i = 0; i < elements.length; i++) {
+  observer.observe(elements[i]);
+}
+
+function openModal(videoId) {
+  var modal = document.getElementById('videoModal');
+  var iframe = document.getElementById('modalVideo');
+  iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+  modal.classList.add('open');
+}
+
+function closeModal() {
+  var modal = document.getElementById('videoModal');
+  var iframe = document.getElementById('modalVideo');
+  iframe.src = '';
+  modal.classList.remove('open');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
 
 </body>
 </html>
