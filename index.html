@@ -26,7 +26,7 @@ body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xm
 .glow{position:fixed;width:500px;height:500px;border-radius:50%;filter:blur(160px);pointer-events:none;z-index:0}
 .glow-1{background:#E8C872;top:-200px;left:50%;transform:translateX(-50%);opacity:0.06}
 
-.wrapper{position:relative;z-index:1;text-align:center;padding:40px 28px;max-width:800px;width:100%}
+.wrapper{position:relative;z-index:1;text-align:center;padding:40px 28px;max-width:1000px;width:100%}
 
 .name{font-family:'Sora',sans-serif;font-size:clamp(32px,6vw,52px);font-weight:700;letter-spacing:-2px;margin-bottom:8px;animation:fadeIn 1s ease both}
 .name span{color:#E8C872}
@@ -35,7 +35,7 @@ body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xm
 
 .doors{display:grid;grid-template-columns:1fr 1fr;gap:24px;animation:fadeUp 1s 0.4s ease both}
 
-.door{position:relative;border-radius:16px;overflow:hidden;cursor:pointer;text-decoration:none;color:#F0EDE6;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);border:1px solid rgba(255,255,255,0.06);aspect-ratio:3/4;display:flex;flex-direction:column;justify-content:flex-end;padding:32px}
+.door{position:relative;border-radius:16px;overflow:hidden;cursor:pointer;text-decoration:none;color:#F0EDE6;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);border:1px solid rgba(255,255,255,0.06);aspect-ratio:2/3;display:flex;flex-direction:column;justify-content:flex-end;padding:40px}
 .door:hover{transform:translateY(-6px);border-color:#E8C872}
 
 .door-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.6s ease}
@@ -81,22 +81,20 @@ body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xm
     <a href="/360/" class="door">
       <div class="door-bg" style="background-image:url('portrait.jpg')"></div>
       <div class="door-content">
-        <div class="door-icon">🎙️</div>
-        <div class="door-label">Podcast & News</div>
+        <div class="door-label">News · Podcasts · Digital</div>
         <h2 class="door-title">Nelson John 360</h2>
         <p class="door-desc">AI, geopolitics, science, and the stories shaping our world. Deep dives from a ACEF Gold Award-winning news presenter.</p>
-        <div class="door-arrow">Explore →</div>
+        <div class="door-arrow">Explore &#8594;</div>
       </div>
     </a>
 
     <a href="/music/" class="door">
       <div class="door-bg" style="background-image:url('music-portrait.jpg')"></div>
       <div class="door-content">
-        <div class="door-icon">🎷</div>
-        <div class="door-label">Live Music</div>
+        <div class="door-label">Live Music · Events</div>
         <h2 class="door-title">Nelson John Music</h2>
-        <p class="door-desc">Saxophone, vocals, and guitar. 25+ years of soul, jazz, pop, and Bollywood for weddings, events, and intimate venues.</p>
-        <div class="door-arrow">Explore →</div>
+        <p class="door-desc">Saxophone, vocals, and guitar. 25+ years of Pop, Rock, Soul, and Bollywood for weddings, events, and intimate venues.</p>
+        <div class="door-arrow">Explore &#8594;</div>
       </div>
     </a>
 
