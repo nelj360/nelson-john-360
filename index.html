@@ -37,6 +37,7 @@ body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xm
 
 .door{position:relative;border-radius:16px;overflow:hidden;cursor:pointer;text-decoration:none;color:#F0EDE6;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);border:1px solid rgba(255,255,255,0.06);aspect-ratio:2/3;display:flex;flex-direction:column;justify-content:flex-end;padding:40px}
 .door:hover{transform:translateY(-6px);border-color:#E8C872}
+  .door:last-child{border-bottom-color:#0A0A0A}
 
 .door-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.6s ease}
 .door:hover .door-bg{transform:scale(1.05)}
